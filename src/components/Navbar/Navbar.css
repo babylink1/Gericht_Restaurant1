@@ -1,0 +1,153 @@
+.app__navbar {
+    width: 100%;
+    display: flex;
+    /* border: 2px solid black; */
+    justify-content: space-between;
+    align-items: center;
+    background: var(--color-black);
+    padding: 1rem 2rem;
+
+}
+
+.app__navbar-logo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+
+.app__navbar-logo img {
+    width: 150px;
+
+}
+
+.app__navbar-links {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+
+}
+
+.app__navbar-links li {
+    margin: 0 1rem;
+    cursor: pointer;
+
+}
+
+.app__navbar-links li:hover {
+    color: var(--color-grey);
+    /* hover 把鼠标放到要点击的内容上，变灰 */
+
+
+}
+
+.app__navbar-login {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.app__navbar-login a {
+    margin: 0 1rem;
+    /* 设置元素的上下边距为 0，左右边距为 1rem（相当于根据字体大小设置的间距）。 */
+    text-decoration: none;
+    /* 去除链接的下划线效果，使链接文本不显示下划线。 */
+    transition: 0.5s ease;
+    /* 为元素的过渡效果设置动画，
+    表示从一种状态到另一种状态的过渡会在 0.5 秒内完成，
+    使用 "ease" 缓动函数，使过渡效果平滑。 */
+
+}
+
+/* 在login register，book table,内容鼠标点上去时，出现横线 */
+.app__navbar-login a:hover {
+    border-bottom: 1px solid var(--color-golden);
+
+}
+
+/* 在login 与book table两个按键之间 产生一个灰色竖线 作为区隔 */
+.app__navbar-login div {
+    width: 1px;
+    height: 30px;
+    background-color: var(--color-grey);
+}
+
+.app__navbar-smallscreen {
+    display: none;
+}
+
+.app__navbar-smallscreen_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    /* entire height of the screen */
+    background: var(--color-black);
+    transition: 0.5s ease;
+    flex-direction: column;
+    z-index: 5;
+}
+
+.app__navbar-smallscreen_overlay .overlay__close {
+    font-size: 27px;
+    color: var(--color-golden);
+    cursor: pointer;
+
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.app__navbar-smallscreen_links {
+    list-style: none;
+}
+
+.app__navbar-smallscreen_links li {
+    margin: 2rem;
+    cursor: pointer;
+    color: var(--color-golden);
+    font-size: 2rem;
+    text-align: center;
+    font-family: var(--font-base);
+}
+
+.app__havbar-smallscreen_links l1:hover {
+    color: var(--color-white);
+}
+
+
+@media screen and (max-width:2000px) {
+    .app__navbar-logo img {
+        width: 210px;
+    }
+}
+
+
+@media screen and (max-width:1150px) {
+    .app__navbar-links {
+        display: none;
+    }
+
+    .app__navbar-smallscreen {
+        display: flex;
+    }
+}
+
+@media screen and (max-width:650px) {
+
+    .app__navbar {
+        padding: 1rem;
+    }
+
+    .app__nav-login {
+        display: none;
+    }
+
+    .app__navbar-logo img {
+        width: 110px;
+
+    }
+}

@@ -1,0 +1,109 @@
+.app__aboutus {
+    position: relative;
+
+}
+
+.app__aboutus-overlay {
+    position: aboslute;
+    inset: 0;
+    /* 使用 inset 属性将元素的上、右、下、
+    左四个边距都设置为 0。
+    这意味着元素将填充父容器的整个空间，完全覆盖父容器的内容。 */
+
+}
+
+.app__aboutus-overlay img {
+    width: 391px;
+    height: 415px;
+    z-index: 0;
+    /* 设置图片元素的层级为 0。z-index 
+    属性用于控制元素在堆叠顺序中的显示优先级，
+    数值越大的元素将覆盖数值较小的元素。 */
+}
+
+.app__aboutus-cotent {
+    width: 100%;
+    z-index: 2;
+
+
+}
+
+/* 
+flex: 1;：设置元素的伸缩比例为 1。这意味着该元素将占据可用空间的比例为 1
+，使其在父容器中占据剩余的空间。
+display: flex;：将元素的显示方式设置为弹性布局。
+弹性布局使得元素内部的子元素可以自由地伸缩和定位。
+justify-content: flex-end;：
+指定元素内部子元素在主轴上的对齐方式为末端对齐。
+这将使子元素沿着主轴方向（水平方向）靠近容器的末端对齐。
+align-items: flex-end;：
+指定元素内部子元素在交叉轴上的对齐方式为末端对齐。
+这将使子元素沿着交叉轴方向（垂直方向）靠近容器的末端对齐。
+flex-direction: column;：
+指定元素内部子元素的排列方向为垂直方向（从上到下）。
+这将使子元素在垂直方向上依次排列。
+text-align: right;：将文本内容在元素内部进行右对齐。
+ */
+
+.app__aboutus-content_about {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+    text-align: right;
+}
+
+.app__aboutus-content_knife {
+    margin: 2rem 4rem;
+}
+
+.app__aboutus-content_knife img {
+    height: 910px;
+}
+
+.app__aboutus-content_history {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    text-align: left;
+}
+
+.app__aboutus-content_history p,
+.app__aboutus-content_about p {
+    margin: 2rem 0;
+    color: var(--color-grey);
+}
+
+@media screen and (max-width: 2000px) {
+    .app__aboutus-content_knife img {
+        height: 1110px;
+    }
+
+    .app__aboutus-content_history p,
+    .app__aboutus-content_about p {
+        margin: 4rem 0;
+
+    }
+
+}
+
+@media screen and (max-width: 900px) {
+    .app__aboutus-content {
+        flex-direction: column;
+    }
+
+    .app__aboutus-content_knife {
+        margin: 4rem 0;
+
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .app__aboutus-overlay img {
+        width: 80%;
+        height: 320px;
+    }
+}
